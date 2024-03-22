@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Tracker App</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Money Tracker App</h1>
+      <form action="/add" method="post">
+        <div class="input-div">
+          <div>
+            <label for="category"> Choose Category :</label>
+            <input
+              type="radio"
+              name="category"
+              id="category"
+              value="expense"
+              required
+            />
+            <label for="category">Expense</label>
+            <input
+              type="radio"
+              name="category"
+              id="category"
+              value="income"
+              required
+            />
+            <label for="category">Income</label>
+          </div>
+
+          <input
+            type="number"
+            name="amount"
+            placeholder="Enter the Amount"
+            required
+          />
+
+          <input type="text" name="info" placeholder="Enter Details" required />
+
+          <input type="date" name="date" required />
+          <button type="submit">Add</button>
+        </div>
+      </form>
+    </section>
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

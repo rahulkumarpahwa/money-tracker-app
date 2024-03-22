@@ -1,0 +1,7 @@
+.input-div {
+  display: flex;
+}
+
+.input-div > input {
+  margin: 0px 15px;
+}
