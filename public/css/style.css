@@ -96,7 +96,7 @@ td:nth-child(even) {
 }
 
 .about {
-  margin: 20px;
+  margin: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
