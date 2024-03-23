@@ -8,6 +8,7 @@ This Money Tracker App has been created by [Rahul Kumar](https://linkedin.com/in
 - You can go to About page to know more about the app.
 
 # Technologies used :
+- CRUD Operations
 - Ejs (Embedded JavaScript)
 - Node.js
 - Express.js
