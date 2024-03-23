@@ -1,5 +1,5 @@
 # Introduction
-This Money Tracker App has been created by (Rahul Kumar)[https://linkedin.com/in/rahulkumarpahwa] as a part of learning Full Stack development.
+This Money Tracker App has been created by [Rahul Kumar](https://linkedin.com/in/rahulkumarpahwa) as a part of learning Full Stack development.
 
 # Features :
 - You can add your Income as well as Expenditure with its Date and Information.
