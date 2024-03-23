@@ -1,7 +1,42 @@
+h1 {
+  text-align: center;
+}
+
 .input-div {
   display: flex;
+  justify-content: center;
 }
 
 .input-div > input {
   margin: 0px 15px;
+}
+
+table {
+  text-align: center;
+}
+
+.output-div {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  /* border-collapse: collapse; */
+  width: 80%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  background-color: cadetblue;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

@@ -18,12 +18,8 @@ const valueSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  totalAmount: {
-    type: Number,
-    required: true,
-  },
 });
 
 const Value = mongoose.model("Value", valueSchema);
 
-exports.default = Value;
+module.exports = Value;

@@ -34,16 +34,49 @@
           <input
             type="number"
             name="amount"
-            placeholder="Enter the Amount"
+            placeholder="Enter the Amount in ₹"
             required
           />
 
-          <input type="text" name="info" placeholder="Enter Details" required />
+          <input type="text" name="info" placeholder="Enter Info" required />
 
           <input type="date" name="date" required />
           <button type="submit">Add</button>
         </div>
       </form>
+    </section>
+
+    <section>
+      <h1>Income and Expenses</h1>
+      <div class="output-div">
+        <table>
+          <thead>
+            <tr class="output-div-head">
+              <th>Category</th>
+              <th>Amount (in ₹)</th>
+              <th>Info</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for( let i = 0; i < data.length; i++ ) { %>
+
+            <tr class="output-div-body">
+              <td><%= data[i].category %></td>
+              <td><%= data[i].amount %></td>
+              <td><%= data[i].info %></td>
+              <td><%= data[i].date %></td>
+              <td><button>Delete</button></td>
+            </tr>
+            <% } %>
+          </tbody>
+          <tfooter>
+            <td>Total :</td>
+            <td></td>
+          </tfooter>
+        </table>
+      </div>
     </section>
 
     <script src="scripts/index.js"></script>

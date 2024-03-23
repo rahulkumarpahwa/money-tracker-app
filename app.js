@@ -24,14 +24,19 @@ main()
     console.log(err);
   });
 
-app.get("/", (req, res) => {
-  // res.send("hello sidie");
-  res.render("index");
+app.get("/", async (req, res) => {
+  // res.send("hello to home route");
+  const data = await Value.find();
+  res.render("index", { data });
+  // console.log(data);
 });
 
-app.post("/", async (req, res) => {
+app.post("/add", async (req, res) => {
   try {
     const { category, amount, info, date } = req.body;
+    // let correctDate = date.split("").reverse().join("");
+
+    // console.log(req.body);
     let newRecord = new Value({
       category,
       amount,
@@ -40,6 +45,7 @@ app.post("/", async (req, res) => {
     });
     await newRecord.save();
     console.log("new data recorded");
+    res.redirect("back");
   } catch (err) {
     console.log(err);
   }
