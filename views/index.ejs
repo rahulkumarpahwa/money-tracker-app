@@ -9,45 +9,51 @@
   <body>
     <section>
       <h1>Money Tracker App</h1>
-      <form action="/add" method="post">
+      <span class="about-home"
+        ><Button><a href="/about">About</a></Button></span
+      >
+      <form action="/add" method="post" id="add-form">
         <div class="input-div">
-          <div>
-            <label for="category"> Choose Category :</label>
+          <label for="category"> Choose Category : &nbsp;</label>
+          <div class="category">
+            &nbsp;
             <input
               type="radio"
               name="category"
-              id="category"
+              id="expense"
               value="expense"
               required
             />
-            <label for="category">Expense</label>
+            <label for="expense">Expense</label>
             <input
               type="radio"
               name="category"
-              id="category"
+              id="income"
               value="income"
               required
             />
-            <label for="category">Income</label>
+            <label for="income">Income</label>
+            &nbsp;
           </div>
 
           <input
             type="number"
             name="amount"
-            placeholder="Enter the Amount in ₹"
+            id="amount"
+            placeholder="Enter the Amount (in ₹)"
             required
           />
 
           <input type="text" name="info" placeholder="Enter Info" required />
 
           <input type="date" name="date" required />
-          <button type="submit">Add</button>
+          <button type="submit" id="add-btn">Add</button>
         </div>
       </form>
     </section>
 
     <section>
-      <h1>Income and Expenses</h1>
+      <h2>Income and Expenses</h2>
       <div class="output-div">
         <table>
           <thead>
@@ -60,21 +66,37 @@
             </tr>
           </thead>
           <tbody>
-            <% for( let i = 0; i < data.length; i++ ) { %>
+            <% let total = 0 %> <% for( let i = 0; i < data.length; i++ ) { %>
+            <% const {category, amount, info, date , _id} = data[i] %>
 
             <tr class="output-div-body">
-              <td><%= data[i].category %></td>
-              <td><%= data[i].amount %></td>
-              <td><%= data[i].info %></td>
-              <td><%= data[i].date %></td>
-              <td><button>Delete</button></td>
+              <td>
+                <%= category.charAt(0).toUpperCase() + category.slice(1) %>
+              </td>
+
+              <% if (category == "expense") { %>
+              <td><b class="minus">(-) </b><%= amount %></td>
+              <% } else { %>
+              <td><b class="plus">(+) </b> <%= amount %></td>
+              <% } %>
+
+              <td><%= info.charAt(0).toUpperCase() + info.slice(1) %></td>
+              <td><%= date %></td>
+
+              <td class="delete-btn-td">
+                <form action="/delete/<%=_id%>?_method=DELETE" method="post">
+                  <button class="delete-btn">Delete</button>
+                </form>
+              </td>
             </tr>
-            <% } %>
           </tbody>
-          <tfooter>
-            <td>Total :</td>
-            <td></td>
-          </tfooter>
+
+          <% if (category == "expense") {%> <% total -= amount %> <% } else if
+          (category == "income") { %> <% total += amount %> <% } %> <% } %>
+          <tfoot>
+            <td>Total (in ₹)</td>
+            <td><b class="net"> <%= total %></b></td>
+          </tfoot>
         </table>
       </div>
     </section>

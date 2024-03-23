@@ -1,18 +1,47 @@
-h1 {
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #b1b6bd;
+  color: rgb(47, 37, 37);
+  font-weight: 600;
+}
+
+h1,
+h2 {
   text-align: center;
+  margin: 20px 0 25px 0;
 }
 
 .input-div {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .input-div > input {
-  margin: 0px 15px;
+  margin: 0px 12px;
+  padding: 2px 0px;
+  text-align: center;
+}
+
+.input-div > button {
+  border: 1px solid rgb(164, 162, 162);
+  padding: 5px 25px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px 0.5px rgba(0, 0, 0, 0.3);
+  background-color: #56ed7c;
+  color: rgb(45, 41, 41);
+  font-weight: 600;
 }
 
 table {
   text-align: center;
+}
+
+.category {
+  border: 1px solid rgb(164, 162, 162);
+  border-radius: 10px;
+  padding: 1px 5px;
+  background-color: #dddddd;
 }
 
 .output-div {
@@ -34,9 +63,96 @@ th {
 }
 
 th {
-  background-color: cadetblue;
+  background-color: rgb(81, 189, 193);
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+td:nth-child(even) {
+  background-color: #dddddd !important;
+}
+
+.delete-btn-td {
+  padding: 0;
+  box-shadow: 0px 3px 6px 0.5px rgba(0, 0, 0, 0.3);
+}
+.delete-btn {
+  width: 100%;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #c72044;
+  color: rgb(45, 41, 41);
+  font-weight: 600;
+}
+
+.minus {
+  color: #c72044;
+}
+.plus {
+  color: #0ab334;
+}
+.net {
+  color: blue;
+}
+
+.about {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  color: #4d4c4c;
+}
+
+.about-container {
+  padding: 10px;
+}
+
+.about-heading {
+  text-align: center;
+  margin: 10px 0;
+}
+.about-container h3,
+.about-container h2 {
+  margin: 15px;
+}
+.about-container h3 a {
+  color: #4d4c4c;
+}
+
+.about button {
+  margin: 8px 0px;
+  width: 300px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(135, 130, 130);
+  color: #4d4c4c;
+  font-weight: 600;
+}
+
+.about button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.about-home {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+
+.about-home button {
+  margin: 10px 0px;
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(135, 130, 130);
+  color: #4d4c4c;
+  font-weight: 600;
+}
+.about-home button a {
+  text-decoration: none;
+  color: inherit;
 }

@@ -4,6 +4,7 @@ const port = 3000;
 const mongoose = require("mongoose");
 const Value = require("./model/model.js");
 const path = require("path");
+const methodOverride = require("method-override");
 require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -11,6 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.json()); // for json
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 async function main() {
   await mongoose.connect(process.env.ATLASDB_URL);
@@ -31,11 +33,22 @@ app.get("/", async (req, res) => {
   // console.log(data);
 });
 
+app.delete("/delete/:id", async (req, res) => {
+  let { id } = req.params;
+  let deletedData = await Value.findByIdAndDelete(id);
+  // console.log(deletedData);
+  console.log("data deleted");
+  res.redirect("/");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
 app.post("/add", async (req, res) => {
   try {
     const { category, amount, info, date } = req.body;
-    // let correctDate = date.split("").reverse().join("");
-
+    // let correctDate = date.split("").reverse().join(""); //reversing the date
     // console.log(req.body);
     let newRecord = new Value({
       category,
