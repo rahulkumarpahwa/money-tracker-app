@@ -12,6 +12,7 @@ This Money Tracker App has been created by [Rahul Kumar](https://linkedin.com/in
 - Ejs (Embedded JavaScript)
 - Node.js
 - Express.js
+- Mongoose
 - MongoDB
 - JavaScript
 - CSS
