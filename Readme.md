@@ -17,4 +17,4 @@ This Money Tracker App has been created by [Rahul Kumar](https://linkedin.com/in
 - CSS
 - CSS Flexbox
 
-# Live : (Money Tracker App)[https://linkedin.com/in/rahulkumarpahwa]
+# Live : [Money Tracker App](https://money-tracker-app-by-rahul.onrender.com/)
